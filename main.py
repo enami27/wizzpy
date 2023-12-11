@@ -2,12 +2,12 @@ import json
 import random
 
 class Flashcard:
-    def __init__(self, question, choices, correct_answer):
+    def __init__(self, question, choices, correct_answer, incorrect_attempts=0, correct_attempts=0):
         self.question = question
         self.choices = choices
         self.correct_answer = correct_answer
-        self.incorrect_attempts = 0
-        self.correct_attempts = 0
+        self.incorrect_attempts = incorrect_attempts
+        self.correct_attempts = correct_attempts
 
     def ask_question(self):
         print(self.question)
