@@ -74,6 +74,7 @@ def edit_flashcard(flashcard):
 def delete_flashcard(flashcard_bank, index):
     del flashcard_bank[index]
 
+# let the user pick the flashcard
 def choose_flashcard(flashcard_bank):
     list_flashcards(flashcard_bank)
     try:
@@ -151,9 +152,9 @@ def main():
             flashcard_bank.append(new_flashcard)
             save_flashcards_to_file(flashcard_bank)
 
-        # review a random flashcard
+        # review flashcards
         elif choice == '2':
-
+            # display submenu 
             if flashcard_bank:
                 print("\n Review flashcards")
                 print("\n 1. Review a random flashcard")
@@ -170,6 +171,7 @@ def main():
                         print("You have no flashcard available. Please add some first")
 
                 elif review_choice == '2':
+                    # let the user pock a flashcard
                     choose_flashcard(flashcard_bank)
 
                 else:
