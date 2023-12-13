@@ -74,6 +74,18 @@ def edit_flashcard(flashcard):
 def delete_flashcard(flashcard_bank, index):
     del flashcard_bank[index]
 
+def choose_flashcard(flashcard_bank):
+    list_flashcards(flashcard_bank)
+    try:
+        flashcard_index = int(input("Enter the number of the flashcard you'd like to play :"))
+        if 0 <= flashcard_index < len(flashcard_bank):
+            flashcard_bank[flashcard_index].ask_question()
+            save_flashcards_to_file(flashcard_bank)
+        else:
+            print("Invalid index. Please enter a valid number.")
+    except ValueError:
+        print("Please enter a valid number")
+
 # select flashcard based on incorrect to correct attempts ratio
 def select_flashcard(flashcard_bank):
     # don't return anything if the flashcard bank is empty
@@ -124,7 +136,7 @@ def main():
     while True:
         print("\nWizzpy Flashcard App")
         print("1. Add a new flashcard")
-        print("2. Review a random flashcard")
+        print("2. Review a flashcard")
         print("3. View all flashcards")
         print("4. Edit a  flashcard")
         print("5. Delete a flashcard")
@@ -141,14 +153,30 @@ def main():
 
         # review a random flashcard
         elif choice == '2':
+
             if flashcard_bank:
-                # select a random flashcard
-                random_flashcard = select_flashcard(flashcard_bank)
-                if random_flashcard:
-                    random_flashcard.ask_question()
-                    save_flashcards_to_file(flashcard_bank)
+                print("\n Review flashcards")
+                print("\n 1. Review a random flashcard")
+                print("\n 2. Pick a flashcard to review")
+                review_choice = input("Enter yur choice (number) : ")
+
+                if review_choice == '1':
+                    # select a random flashcard
+                    random_flashcard = select_flashcard(flashcard_bank)
+                    if random_flashcard:
+                        random_flashcard.ask_question()
+                        save_flashcards_to_file(flashcard_bank)
+                    else:
+                        print("You have no flashcard available. Please add some first")
+
+                elif review_choice == '2':
+                    choose_flashcard(flashcard_bank)
+
                 else:
-                    print("You have no flashcard available. Please add some first")
+                    print("Invalid choice. Please pick 1 or 2")
+
+            else:
+                print("You currently have no flashcards available ! Please add some first.")
 
         # visualize all flashcards in the bank
         elif choice == '3':
