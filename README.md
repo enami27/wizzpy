@@ -12,8 +12,8 @@ Focusing on simplicity and efficiency, Wizzpy allows users to create, edit, dele
 Users can easily add new flashcards, each consisting of a questions, multiple answer choices and ONE correct answer.
 
 ### Review flashcards
-** Randomized ** : You can ask the app to display a random flashcard in your flashcard bank. Note that the displayed card question will be selected based on the ratio of incorrect to correct attempts (the more incorrect answers to a flashcard, the more likely it is to appear when choosing the randomized option) 
-** Pick and choose ** : you can pick whichever flashcard you want, as long as it exists
+**Randomized** : You can ask the app to display a random flashcard in your flashcard bank. Note that the displayed card question will be selected based on the ratio of incorrect to correct attempts (the more incorrect answers to a flashcard, the more likely it is to appear when choosing the randomized option)  
+**Pick and choose** : you can pick whichever flashcard you want, as long as it exists  
 
 ### Edit flashcards
 You can modify existing flashcards, each consisting of a question, multiple choices, and the correct answer
